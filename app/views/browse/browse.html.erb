@@ -1,0 +1,19 @@
+<ul id="slides">
+    <% @users.each_with_index do |user, i| %>
+        <div class="slide <%= 'showing' if i == 0 %>" data-id="<%= user.id %>">
+            <li>
+                <div class="user-details">
+                    <span class="user-name"><%= user.first_name%></span>, 31<br />
+                    <i class="bi bi-mortarboard-fill me-1"></i> Job /Studies<br />
+                    <i class="bi bi-geo-alt-fill me-2"></i> Location
+                </div>
+            </li>
+        </div>
+    <% end %>
+</ul>
+
+<div id="slide-controls">
+    <span id="decline"><i class="bi bi-x-circle-fill" style="font-size: 2rem"></i></span>
+    <span id="approve"><i class="bi bi-heart-fill" style="font-size: 2rem"></i></span>
+</div>
+

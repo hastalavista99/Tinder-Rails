@@ -1,10 +1,23 @@
-<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom pt-3">
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom pt-3 ms-3 me-3">
     <h5 class="fs-4">Tinder Clone</h5>
 
-    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none p-2" href="#">Features</a>
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none p-2" href="#">Pricing</a>
-        <a class="py-2 link-body-emphasis text-decoration-none p-2" href="#">Support</a>
-    </nav>
-    <a class="btn btn-outline-primary" href="#">Sign up</a>
+    <% if account_signed_in? %>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <%= link_to "Browse", browse_path, class: "text-dark text-decoration-none me-3" %>
+            <%= link_to "My Matches", "#", class: "text-dark text-decoration-none me-3" %>
+            <%= link_to "Settings", edit_account_registration_path, class: "text-dark text-decoration-none me-3" %>
+        </nav>
+        <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "btn btn-secondary me-2" %>
+
+    <% else %>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a class="me-3 py-2 link-body-emphasis text-decoration-none p-2" href="#">Features</a>
+            <a class="me-3 py-2 link-body-emphasis text-decoration-none p-2" href="#">Pricing</a>
+            <a class="py-2 link-body-emphasis text-decoration-none p-2" href="#">Support</a>
+        </nav>
+
+        <%= link_to "Sign in", new_account_session_path, class: "btn btn-secondary me-2" %>
+        <%= link_to "Sign up", new_account_registration_path, class: "btn btn-outline-primary" %>
+    <% end %>
+
 </div>
