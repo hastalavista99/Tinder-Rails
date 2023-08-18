@@ -2,6 +2,8 @@
     <% @users.each_with_index do |user, i| %>
         <div class="slide <%= 'showing' if i == 0 %>" data-id="<%= user.id %>">
             <li>
+                <div class="image-carousel">
+                </div>
                 <div class="user-details">
                     <span class="user-name"><%= user.first_name%></span>, 31<br />
                     <i class="bi bi-mortarboard-fill me-1"></i> Job /Studies<br />
@@ -16,4 +18,3 @@
     <span id="decline"><i class="bi bi-x-circle-fill" style="font-size: 2rem"></i></span>
     <span id="approve"><i class="bi bi-heart-fill" style="font-size: 2rem"></i></span>
 </div>
-
