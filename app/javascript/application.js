@@ -19,9 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
         //     let user_id = slide.getAttribute("data-id");
         //     console.log(user_id);
         // })
+
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
-        // fetch(`/approve/${userId}`, {
+
+        let slide = document.querySelector(".slide");
+        let user_id = slide.getAttribute("data-id");
+        console.log(user_id)
+
+        // fetch(`/approve/${user_id}`, {
         //     method: "POST",
         //     headers: {
         //         "Content-Type": "application/x-www-form-urlencoded"
@@ -29,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // })
         // .then(response => {
         //     if (response.ok) {
-        //         // Handle successful response here
+        //         alert('success');
         //     } else {
         //         throw new Error("Request failed");
         //     }
@@ -44,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
         showSlide(currentIndex);
     });
 
-
-
-
 });
+
+
