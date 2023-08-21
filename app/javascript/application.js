@@ -50,6 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
         showSlide(currentIndex);
     });
 
+    document.querySelectorAll(".match-tile").forEach(matchTile => {
+        matchTile.addEventListener("click", () => {
+            const account_id = matchTile.dataset.id;
+            // Your code to use account_id goes here
+        });
+    });
+
+
 });
 
 
